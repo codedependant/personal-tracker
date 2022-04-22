@@ -12,19 +12,26 @@
       else alert("No Mixpanel toke found!");
     </script>
     <style>body{ font-family: 'Avenir'; }</style>
-    <script>function track(event, props){ mixpanel.track(event, props) && alert(`${event} tracked`); }</script>
+    <script>
+      function track(event, props){
+        mixpanel.track(event, props) && alert(`${event} tracked`);
+      }
+      function timeTrack(event, props){
+        mixpanel.time_event(event, props) && alert(`${event} tracked`);
+      }
+    </script>
   </head>
 
   <body class="min-h-full grid grid-cols-2 auto-rows-auto gap-3 p-3">
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('water', { amount: 250 })">Water 🚰</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('coffee', { amount: 70 })">Coffee ☕️</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('food')">Food 🍱</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('sweets')">Sweets 🍭</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('poop')">Poop 💩</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('pee')">Pee 🔫</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="mixpanel.time_event('sleep')">Sleep 😴</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('sleep')">Wake 🙄</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('walk')">Walk 🚶🏽‍♀️</button>
-    <button class="p-8 bg-purple-200 rounded text-center text-2xl space-y-2" onclick="track('pee')">Run 🏃🏽</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('water', { amount: 250 })">Water 🚰</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('coffee', { amount: 70 })">Coffee ☕️</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('food')">Food 🍱</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('sweets')">Sweets 🍭</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('poop')">Poop 💩</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('pee')">Pee 🔫</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="timeTrack('sleep')">Sleep 😴</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('sleep')">Wake 🙄</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('walk')">Walk 🚶🏽‍♀️</button>
+    <button class="p-8 bg-purple-200 text-purple-900 rounded text-center text-2xl space-y-2" onclick="track('pee')">Run 🏃🏽</button>
   </body>
 </html>
